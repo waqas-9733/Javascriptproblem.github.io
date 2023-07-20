@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript Problem</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="main">
+      <h4>JAVASCRIPT PROBLEM</h4>
+        <!-- Tabs -->
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-question1-tab" data-bs-toggle="pill" data-bs-target="#pills-question1" type="button" role="tab" aria-controls="pills-question1" aria-selected="true">Question 1</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-question2-tab" data-bs-toggle="pill" data-bs-target="#pills-question2" type="button" role="tab" aria-controls="pills-question2" aria-selected="false">Question 2</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-question3-tab" data-bs-toggle="pill" data-bs-target="#pills-question3" type="button" role="tab" aria-controls="pills-question3" aria-selected="false">Question 3</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-question4-tab" data-bs-toggle="pill" data-bs-target="#pills-question4" type="button" role="tab" aria-controls="pills-question4" aria-selected="false">Question 4</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-question5-tab" data-bs-toggle="pill" data-bs-target="#pills-question5" type="button" role="tab" aria-controls="pills-question5" aria-selected="false">Question 5</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-question6-tab" data-bs-toggle="pill" data-bs-target="#pills-question6" type="button" role="tab" aria-controls="pills-question6" aria-selected="false">Question 6</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-question7-tab" data-bs-toggle="pill" data-bs-target="#pills-question7" type="button" role="tab" aria-controls="pills-question7" aria-selected="false">Question 7</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-question8-tab" data-bs-toggle="pill" data-bs-target="#pills-question8" type="button" role="tab" aria-controls="pills-question8" aria-selected="false">Question 8</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-question9-tab" data-bs-toggle="pill" data-bs-target="#pills-question9" type="button" role="tab" aria-controls="pills-question9" aria-selected="false">Question 9</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-question10-tab" data-bs-toggle="pill" data-bs-target="#pills-question10" type="button" role="tab" aria-controls="pills-question10" aria-selected="false">Question 10</button>
+          </li>
+          
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="pills-question1" role="tabpanel" aria-labelledby="pills-question1-tab">
+            <h5>1. Write a JavaScript program to display the current day and time in the following format. 
+              Sample Output : Today is : Tuesday.
+              Current time is : 10 PM : 30 : 38</h5>
+              <div class="code" style="white-space: pre;">
+                <h6>Problem Solution Code:</h6>
+              
+                  function GetDayandTime() {
+
+                    var today= new Date();
+                    var day = today.getDay();
+                    var dayList = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday "];
+                    // Get the current time
+                    let hours = today.getHours();
+                    const ampm = hours >= 12 ? "PM" : "AM";
+                    hours = hours % 12 || 12;
+                    const minutes = today.getMinutes();
+                    const seconds = today.getSeconds();
+            
+                   console.log("Today Is:" + dayList[day] );
+                   console.log("Current time is: ", hours, ampm + " : ", minutes, " : ", seconds);
+                }
+                GetDayandTime(); 
+                <h6>Output:</h6>
+                Today Is:Thursday
+                Current time is:  6 PM :  33  :  29
+              </div>
+              
+          </div>
+          <div class="tab-pane fade" id="pills-question2" role="tabpanel" aria-labelledby="pills-question2-tab">
+            <h5>2. Write a JavaScript program to find out if 1st January will be a Sunday between 2014 and 2050</h5>
+              <div class="code" style="white-space: pre;">
+                <h6>Problem Solution Code:</h6>
+              
+                const getYear = function(year,endyear){
+                  for( var year; year <=endyear; year++){
+                     const d= new Date(year,0,1);
+                     if(d.getDay()===0){
+                        console.log('1st January is being a Sunday '+ year);
+                     }
+                  }
+                }
+                getYear(2014,2050);
+                 <h6>Output:</h6>
+                  1st January is being a Sunday 2017
+                  1st January is being a Sunday 2023
+                  1st January is being a Sunday 2034
+                  1st January is being a Sunday 2040
+                  1st January is being a Sunday 2045
+              </div>
+          
+          </div>
+          <div class="tab-pane fade" id="pills-question3" role="tabpanel" aria-labelledby="pills-question3-tab">
+            <h5>3.Write a JavaScript program to calculate the days left before Christmas</h5>
+              <div class="code" style="white-space: pre;">
+                <h6>Problem Solution Code:</h6>
+              
+                const today = new Date();
+                const cmas = new Date(today.getFullYear(),11,25);
+                if(today.getMonth()==11 && today.getDate()> 25){
+                  cmas.setFullYear(cmas.getFullYear()+1);
+                }
+                const one_day = 1000*60*60*24;
+                const diff = Math.ceil((cmas.getTime()-today.getTime())/(one_day));
+                console.log(`${diff} Day Left Before Next Christsmas`); 
+                <h6>Output:</h6>
+                158 Day Left Before Next Christsmas.
+              </div>
+              
+          </div>
+          <div class="tab-pane fade" id="pills-question4" role="tabpanel" aria-labelledby="pills-question4-tab">
+            <h5>4. Write a JavaScript program to compute the sum of the two given integers. If the two values are the same, then return triple their sum.</h5>
+              <div class="code" style="white-space: pre;">
+                <h6>Problem Solution Code:</h6>
+                function sumNumber (x, y) {
+                  if (x == y) {
+                    return 3 * (x + y);
+                    } 
+                   else
+                   {
+                    return (x + y);
+                   }
+                 }
+                console.log(sumNumber(30, 20));
+                console.log(sumNumber(20, 20)); 
+                <h6>Output:</h6>
+                50
+                120
+              </div>
+          </div>
+          <div class="tab-pane fade" id="pills-question5" role="tabpanel" aria-labelledby="pills-question5-tab">
+            <h5>5. Write a JavaScript program to check two given integers whether one is positive and another one is negative.</h5>
+              <div class="code" style="white-space: pre;">
+                <h6>Problem Solution Code:</h6>
+                function checkNumber(num) {
+                  if (Math.sign(num) === 1) {
+                    console.log('The value is a positive number');
+                  } else if (Math.sign(num) === -1) {
+                    console.log('The value is a negative number');
+                  }
+                }
+                checkNumber(-5); 
+                <h6>Output:</h6>
+                The value is a negative number
+              </div>
+          </div>
+          <div class="tab-pane fade" id="pills-question6" role="tabpanel" aria-labelledby="pills-question6-tab">
+            <h5>6. Write a JavaScript program to create another string by adding "Py" in front of a given string. If the given string begins with "Py" return the original string.</h5>
+              <div class="code" style="white-space: pre;">
+                <h6>Problem Solution Code:</h6>
+                function addPy(str) {
+                  if (str.startsWith("Py")) {
+                    return str;
+                  } else {
+                    return "Py" + str;
+                  }
+                }
+                console.log(addPy("thon"));  
+                console.log(addPy("Python"));   
+                <h6>Output:</h6>
+                Python
+                Python
+              </div>
+          </div>
+          <div class="tab-pane fade" id="pills-question7" role="tabpanel" aria-labelledby="pills-question7-tab">
+            <h5>7. Write a JavaScript program to change the capitalization of all letters in a given string.</h5>
+              <div class="code" style="white-space: pre;">
+                <h6>Problem Solution Code:</h6>
+                function UpperCase(waqas) {
+                  return waqas.toUpperCase();
+                }
+                const result =  UpperCase("Muhammad Waqas");
+                console.log(result);   
+                <h6>Output:</h6>
+                MUHAMMAD WAQAS
+              </div>
+          </div>
+          <div class="tab-pane fade" id="pills-question8" role="tabpanel" aria-labelledby="pills-question8-tab">
+            <h5>8.Write a JavaScript program to compute the sum of all the digits that occur in a given string.</h5>
+              <div class="code" style="white-space: pre;">
+                <h6>Problem Solution Code:</h6>
+                function sumDigits(str) {
+                  var sum = 0;
+                  for (var i = 0; i < str.length; i++) {
+                    var char = str.charAt(i);
+                    if (!isNaN(char)) {
+                      sum += parseInt(char);
+                    }
+                  }
+                  return sum;
+                }
+                var inputString = "Hello9733World9749";
+                var digitSum = sumDigits(inputString);
+                console.log(digitSum);    
+                <h6>Output:</h6>
+                51
+              </div>
+          </div>
+          <div class="tab-pane fade" id="pills-question9" role="tabpanel" aria-labelledby="pills-question9-tab">
+            <h5>9. Write a JavaScript program to break an URL address and put its parts into an array.  
+              Note: url structure : ://.org[/] and there may be no part in the address.</h5>
+              <div class="code" style="white-space: pre;">
+                <h6>Problem Solution Code:</h6>
+                function breakURL(url) {
+                  var urlObject = new URL(url);
+                  var parts = [urlObject.protocol, urlObject.host, urlObject.pathname, urlObject.search, urlObject.hash];
+                  return parts;
+                }
+                var url = "https://www.w3schools.com/jsref/jsref_isnan.asp";
+                 var urlParts = breakURL(url);
+                 console.log(urlParts); 
+                <h6>Output:</h6>
+                [ 'https:', 'www.w3schools.com', '/jsref/jsref_isnan.asp', '', '' ]
+              </div>
+          </div>
+          <div class="tab-pane fade" id="pills-question10" role="tabpanel" aria-labelledby="pills-question10-tab">
+            <h5>10. Write a JavaScript program to sort the strings of a given array of strings in order of increasing length.  
+              Note: Do not change the order if the lengths of two string are same.</h5>
+              <div class="code" style="white-space: pre;">
+                <h6>Problem Solution Code:</h6>
+                function sortStrings(strings) {
+                  strings.sort(function(a, b) {
+                    return a.length - b.length;
+                  });
+                
+                  return strings;
+                }
+                
+                var arr = ["apple", "banana", "cherry", "date", "elderberry"];
+                var sortedArr = sortStrings(arr);
+                console.log(sortedArr);  
+                <h6>Output:</h6>
+                [ 'date', 'apple', 'banana', 'cherry', 'elderberry' ]
+              </div>
+          </div>
+        </div>
+    </div>
+    
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

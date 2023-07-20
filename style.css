@@ -1,0 +1,33 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main h4{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: blue;
+}
+.main{
+  width: 1200px;
+  height: 100vh;
+ 
+}
+.code{
+  display: block;
+  font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    
+    padding: 0 15px;
+}
